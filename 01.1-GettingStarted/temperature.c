@@ -4,8 +4,31 @@
 
 #include <stdio.h>
 
-/* Print Fahrenheit-Celsius table.  Floating-point version*/
+int main_while();
+int main_for();
+
 int main()
+{
+    main_for();
+    main_while();
+}
+
+/* Print Fahrenheit-Celsius table.  Floating-point version, for-loop*/
+int main_for()
+{
+    int fahrenheit;
+
+    for (fahrenheit = 0; fahrenheit <= 300; fahrenheit = fahrenheit + 20)
+    {
+        printf("%3d, %6.1f\n", fahrenheit, (5.0f/9.0f) * (fahrenheit - 32));
+    }
+
+    return -1;
+}
+
+
+/* Print Fahrenheit-Celsius table.  Floating-point version, while-loop*/
+int main_while()
 {
     float fahrenheit, celsius;
     int lower, upper, step;
@@ -20,4 +43,6 @@ int main()
         printf("%3.0f %6.1f\n", fahrenheit, celsius);
         fahrenheit = fahrenheit + step;
     }
+
+    return -1;
 }
