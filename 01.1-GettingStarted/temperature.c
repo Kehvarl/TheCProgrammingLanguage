@@ -4,9 +4,10 @@
 
 #include <stdio.h>
 
+/* Print Fahrenheit-Celsius table.  Floating-point version*/
 int main()
 {
-    int fahrenheit, celsius;
+    float fahrenheit, celsius;
     int lower, upper, step;
 
     lower = 0;      /* lower limit of temperature table */
@@ -15,8 +16,8 @@ int main()
 
     fahrenheit = lower;
     while (fahrenheit <= upper) {
-        celsius = 5 * (fahrenheit - 32) / 9;
-        printf("%d\t%d\n", fahrenheit, celsius);
+        celsius = (5.0f/9.0f) * (fahrenheit - 32.0f);
+        printf("%3.0f %6.1f\n", fahrenheit, celsius);
         fahrenheit = fahrenheit + step;
     }
 }
