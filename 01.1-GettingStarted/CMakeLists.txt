@@ -5,3 +5,4 @@ set(CMAKE_C_STANDARD 99)
 
 add_executable(hello hello.c)
 add_executable(temperature temperature.c)
+add_executable(countchar countchar.c)
