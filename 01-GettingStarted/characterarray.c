@@ -24,8 +24,6 @@ int main()
      */
 
     int len;
-    extern int max;
-    extern char longest[];
 
     max = 0;
 
@@ -46,7 +44,6 @@ int main()
 int get_line(void)
 {
     int i, c;
-    extern char line[];
 
     for (i = 0; i < MAXLINE - 1 && (c = getchar()) != EOF && c!= '\n'; ++i)
     {
@@ -65,7 +62,6 @@ int get_line(void)
 int copy(void)
 {
     int i;
-    extern char line[], longest[];
 
     i = 0;
 
