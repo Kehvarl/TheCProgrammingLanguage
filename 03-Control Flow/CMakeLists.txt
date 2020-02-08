@@ -4,3 +4,4 @@ project(untitled C)
 set(CMAKE_C_STANDARD 99)
 
 add_executable(shellsort shellsort.c)
+add_executable(string_reverse string_reverse.c)
