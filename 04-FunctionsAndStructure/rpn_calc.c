@@ -25,7 +25,9 @@ double pop(void);
 int main()
 {
     int type;
+    double op1;
     double op2;
+    double mod;
     char s[MAX_OP];
 
     while ((type = get_op(s)) != EOF)
@@ -47,9 +49,34 @@ int main()
             case '/':
                 op2 = pop();
                 if (op2 > 0.0)
-                    push(pop()/pop());
+                    push(pop()/op2);
                 else
                     printf("error: zero divisor\n");
+                break;
+            case '%':
+                op2 = pop();
+                op1 = pop();
+
+
+                if (op2 < 0.0)
+                    op2 = -op2;
+
+                if (op2 == 0.0)
+                    printf("error: zero divisor\n");
+
+                if (op1 < 0.0)
+                    mod = -op1;
+                else
+                    mod = op1;
+
+                while (mod >= op2)
+                    mod = mod - op2;
+
+                if (op1 < 0)
+                    push(-mod);
+                else
+                    push(mod);
+
                 break;
             case '\n':
                 printf("\t%.8g\n", pop());
