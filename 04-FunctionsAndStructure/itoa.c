@@ -25,6 +25,7 @@ void itoa(int n)
     ++buff_ptr;
 }
 
+
 int main()
 {
     itoa(1234);
