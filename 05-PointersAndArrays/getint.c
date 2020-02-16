@@ -12,8 +12,18 @@ int bufp = 0;
 
 int getch(void);
 void ungetch(int);
+int getint(int*);
 
-int getint(int * pn)
+int main()
+{
+    int a, b;
+    b = getint(&a);
+
+    printf("%d %d", a, b);
+    return 0;
+}
+
+int getint(int *pn)
 {
     int c, sign;
 
