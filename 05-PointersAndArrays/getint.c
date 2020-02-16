@@ -40,6 +40,11 @@ int getint(int *pn)
     if (c == '+' || c == '-')
     {
         c = getch();
+        if (!isdigit(c))
+            if (sign == -1)
+                ungetch('-');
+            else
+                ungetch('+');
     }
 
     for (*pn = 0; isdigit(c); c = getch())
